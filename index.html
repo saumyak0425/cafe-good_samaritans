@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cafe Good Samaritans — cozy food, coffee, conversations and good vibes in Ranchi." />
+  <title>Cafe Good Samaritans | Ranchi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f3e9;
+      --cream-dark: #eee4d2;
+      --brown: #3b2418;
+      --brown-light: #684333;
+      --coffee: #8b5e3c;
+      --gold: #c59a5b;
+      --white: #fffdf9;
+      --text: #33251e;
+      --muted: #75685f;
+      --border: rgba(59, 36, 24, .12);
+      --shadow: 0 20px 60px rgba(59, 36, 24, .12);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(59, 36, 24, .96);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 35px rgba(0,0,0,.12);
+    }
+
+    .navbar {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      opacity: .9;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: #e5c58f;
+      opacity: 1;
+    }
+
+    .nav-cta {
+      padding: 12px 19px;
+      border-radius: 50px;
+      background: var(--gold);
+      color: var(--brown) !important;
+      opacity: 1 !important;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 27px;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(30,17,10,.82) 0%, rgba(30,17,10,.58) 45%, rgba(30,17,10,.25) 100%),
+        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      padding-top: 80px;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #e5c58f;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(58px, 8vw, 105px);
+      line-height: .94;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #e0bc7d;
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 540px;
+      color: rgba(255,255,255,.84);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 50px;
+      padding: 15px 24px;
+      font-weight: 700;
+      transition: .25s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--brown);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(197,154,91,.25);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.5);
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--brown);
+    }
+
+    .hero-rating {
+      position: absolute;
+      right: 7%;
+      bottom: 55px;
+      padding: 18px 22px;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 18px;
+    }
+
+    .stars {
+      color: #f0bf64;
+      letter-spacing: 3px;
+    }
+
+    .hero-rating strong {
+      font-size: 25px;
+      margin-right: 8px;
+    }
+
+    .hero-rating small {
+      display: block;
+      color: rgba(255,255,255,.72);
+      margin-top: 2px;
+    }
+
+    /* ---------------- INTRO ---------------- */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .intro {
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .section-label {
+      color: var(--coffee);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      color: var(--brown);
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 550px;
+    }
+
+    .intro-image {
+      position: relative;
+    }
+
+    .intro-image img {
+      height: 540px;
+      border-radius: 180px 25px 25px 25px;
+    }
+
+    .image-note {
+      position: absolute;
+      bottom: -25px;
+      left: -25px;
+      background: var(--brown);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      width: 190px;
+      box-shadow: var(--shadow);
+    }
+
+    .image-note strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      color: #e5c58f;
+    }
+
+    /* ---------------- FEATURES ---------------- */
+
+    .features {
+      background: var(--cream);
+      padding: 70px 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .feature {
+      background: var(--cream);
+      padding: 34px 25px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      color: var(--brown);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ---------------- MENU ---------------- */
+
+    .menu-section {
+      background: var(--brown);
+      color: white;
+    }
+
+    .menu-section .section-label {
+      color: #d9b779;
+    }
+
+    .menu-section .section-title {
+      color: white;
+    }
+
+    .menu-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      border: 1px solid rgba(255,255,255,.22);
+      background: transparent;
+      color: rgba(255,255,255,.75);
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+    }
+
+    .tab.active,
+    .tab:hover {
+      background: #e0bc7d;
+      color: var(--brown);
+      border-color: #e0bc7d;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .menu-item {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      transition: .25s;
+    }
+
+    .menu-item:hover {
+      background: rgba(255,255,255,.11);
+      transform: translateY(-3px);
+    }
+
+    .menu-item h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .menu-item p {
+      color: rgba(255,255,255,.58);
+      font-size: 13px;
+      max-width: 430px;
+    }
+
+    .price {
+      color: #e0bc7d;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    /* ---------------- GALLERY ---------------- */
+
+    .gallery-section {
+      background: var(--white);
+    }
+
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 270px 270px;
+      gap: 13px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: .6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 35px 20px 18px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+      opacity: 0;
+      transition: .3s;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* ---------------- REVIEWS ---------------- */
+
+    .reviews {
+      background: var(--cream-dark);
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .rating-big {
+      font-family: "Playfair Display", serif;
+      font-size: 100px;
+      line-height: .8;
+      color: var(--brown);
+    }
+
+    .rating-stars {
+      color: var(--gold);
+      font-size: 22px;
+      margin: 20px 0 5px;
+      letter-spacing: 4px;
+    }
+
+    .review-count {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .review-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      line-height: 1.4;
+      color: var(--brown);
+    }
+
+    .review-person {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .review-person strong {
+      display: block;
+    }
+
+    .review-person span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .review-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .review-controls button {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--brown);
+    }
+
+    /* ---------------- LOCATION ---------------- */
+
+    .visit {
+      background: var(--white);
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--brown);
+      color: white;
+    }
+
+    .visit-content {
+      padding: 65px;
+    }
+
+    .visit-content .section-title {
+      color: white;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .contact-list strong {
+      color: white;
+      display: block;
+    }
+
+    .map-box {
+      min-height: 480px;
+      background:
+        linear-gradient(rgba(59,36,24,.15), rgba(59,36,24,.15)),
+        url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1000&q=80")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .map-card {
+      background: white;
+      color: var(--brown);
+      padding: 24px;
+      width: min(320px, 80%);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-card strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      background: #26170f;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    footer .logo {
+      margin-bottom: 17px;
+    }
+
+    .footer-description {
+      color: rgba(255,255,255,.55);
+      max-width: 370px;
+      font-size: 14px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+      color: #e0bc7d;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 22px;
+      color: rgba(255,255,255,.4);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ---------------- MODAL ---------------- */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,.65);
+      backdrop-filter: blur(6px);
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: grid;
+    }
+
+    .modal-card {
+      background: var(--white);
+      width: min(500px, 100%);
+      border-radius: 25px;
+      padding: 35px;
+      position: relative;
+      animation: modalIn .3s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      border: 0;
+      background: var(--cream);
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      color: var(--brown);
+      font-size: 20px;
+    }
+
+    .modal-card h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--brown);
+      font-size: 34px;
+      margin-bottom: 5px;
+    }
+
+    .modal-card > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--brown);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      background: white;
+      color: var(--text);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    /* ---------------- ANIMATION ---------------- */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        background: var(--brown);
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        transform: translateY(-120%);
+        transition: .3s;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .intro-grid,
+      .review-layout,
+      .visit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-image {
+        order: -1;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 250px 250px;
+      }
+
+      .gallery-item:first-child {
+        grid-row: span 1;
+      }
+
+      .gallery-item:last-child {
+        grid-column: span 2;
+      }
+
+      .visit-content {
+        padding: 45px 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero-rating {
+        display: none;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .intro-image img {
+        height: 400px;
+      }
+
+      .image-note {
+        left: 10px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .menu-header,
+      .gallery-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 240px);
+      }
+
+      .gallery-item:last-child {
+        grid-column: auto;
+      }
+
+      .quote {
+        font-size: 21px;
+      }
+
+      .review-card {
+        padding: 28px;
+      }
+
+      .rating-big {
+        font-size: 80px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .copyright {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header id="header">
+    <div class="container navbar">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark">☕</span>
+        <span>Good Samaritans</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="#" class="nav-cta reserve-trigger">Reserve a Table</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">A little place for good moments</div>
+
+          <h1>
+            Coffee.<br>
+            Food.<br>
+            <span>Good people.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to Cafe Good Samaritans — a cozy corner in the heart
+            of Ranchi for delicious food, great coffee, conversations and
+            unforgettable hangouts.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">Explore Our Menu ↓</a>
+            <a href="#visit" class="btn btn-outline">Find Us</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-rating">
+        <div>
+          <strong>4.7</strong>
+          <span class="stars">★★★★★</span>
+        </div>
+        <small>1,072+ Google Reviews</small>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+
+        <div class="intro-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+            alt="Cozy cafe interior"
+          />
+
+          <div class="image-note">
+            <strong>₹200–400</strong>
+            per person
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-label">The Good Samaritans way</div>
+
+          <h2 class="section-title">
+            More than a café,
+            it's a mood.
+          </h2>
+
+          <p class="section-text">
+            Tucked away at Ratan Talkies Chowk, Cafe Good Samaritans is
+            made for slow afternoons, spontaneous meetups and evenings
+            that somehow turn into hours.
+            <br><br>
+            From creamy pasta and refreshing shakes to cold coffee and
+            crispy Baby Corn Chilly, there's something comforting waiting
+            for everyone.
+          </p>
+
+          <a href="#menu" class="btn btn-primary" style="margin-top:28px;">
+            See What's Cooking
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="container">
+
+        <div class="feature-grid reveal">
+
+          <div class="feature">
+            <div class="feature-icon">☕</div>
+            <h3>Great Coffee</h3>
+            <p>Cold coffees & refreshing drinks</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🍝</div>
+            <h3>Comfort Food</h3>
+            <p>Pasta, snacks & delicious bites</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">✦</div>
+            <h3>Cozy Vibes</h3>
+            <p>Warm, peaceful & aesthetic</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">♡</div>
+            <h3>Friendly Service</h3>
+            <p>Hospitality that feels personal</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+
+        <div class="menu-header reveal">
+
+          <div>
+            <div class="section-label">Our favorites</div>
+            <h2 class="section-title">Something for<br>every craving.</h2>
+          </div>
+
+          <div class="menu-tabs">
+            <button class="tab active" data-category="all">All</button>
+            <button class="tab" data-category="food">Food</button>
+            <button class="tab" data-category="drinks">Drinks</button>
+            <button class="tab" data-category="dessert">Dessert</button>
+          </div>
+
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+
+          <article class="menu-item reveal" data-category="food">
+            <div>
+              <h3>Mixed Sauce Pasta</h3>
+              <p>Creamy, rich and loaded with flavor.</p>
+            </div>
+            <span class="price">₹249</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="food">
+            <div>
+              <h3>White Sauce Pasta</h3>
+              <p>Silky white sauce with a comforting finish.</p>
+            </div>
+            <span class="price">₹229</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="food">
+            <div>
+              <h3>Baby Corn Chilly</h3>
+              <p>Crispy baby corn tossed in a spicy chili glaze.</p>
+            </div>
+            <span class="price">₹199</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="drinks">
+            <div>
+              <h3>Classic Cold Coffee</h3>
+              <p>Chilled, creamy and perfect for long conversations.</p>
+            </div>
+            <span class="price">₹149</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="drinks">
+            <div>
+              <h3>Chocolate Shake</h3>
+              <p>Rich chocolate goodness served chilled.</p>
+            </div>
+            <span class="price">₹179</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="drinks">
+            <div>
+              <h3>Signature Shakes</h3>
+              <p>Thick, indulgent and made for sharing.</p>
+            </div>
+            <span class="price">₹189</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="dessert">
+            <div>
+              <h3>Chocolate Chip Dessert</h3>
+              <p>A sweet little ending to your café date.</p>
+            </div>
+            <span class="price">₹159</span>
+          </article>
+
+          <article class="menu-item reveal" data-category="food">
+            <div>
+              <h3>Café Snacks</h3>
+              <p>Easygoing bites for your next hangout.</p>
+            </div>
+            <span class="price">₹129+</span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="gallery-header reveal">
+          <div>
+            <div class="section-label">Inside Good Samaritans</div>
+            <h2 class="section-title">Come for the food.<br>Stay for the vibe.</h2>
+          </div>
+
+          <p class="section-text">
+            Cozy corners, warm lights and plenty of space to sit back,
+            relax and enjoy the moment.
+          </p>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1000&q=85"
+              alt="Cafe seating"
+            />
+            <div class="gallery-overlay">Cozy seating</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+              alt="Coffee"
+            />
+            <div class="gallery-overlay">Fresh coffee</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=85"
+              alt="Cafe drinks"
+            />
+            <div class="gallery-overlay">Good drinks</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+              alt="Cafe food"
+            />
+            <div class="gallery-overlay">Good food</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85"
+              alt="Restaurant table"
+            />
+            <div class="gallery-overlay">Good company</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="container review-layout">
+
+        <div class="reveal">
+          <div class="section-label">Loved by Ranchi</div>
+
+          <div class="rating-big">4.7</div>
+
+          <div class="rating-stars">★★★★★</div>
+
+          <div class="review-count">
+            Based on 1,072+ Google reviews
+          </div>
+        </div>
+
+        <div class="review-card reveal">
+
+          <div>
+            <div class="stars">★★★★★</div>
+
+            <p class="quote" id="reviewQuote">
+              “Love the cozy vibe and the food here is delicious
+              and at a very decent cost.”
+            </p>
+          </div>
+
+          <div class="review-person">
+
+            <div>
+              <strong id="reviewName">Happy Guest</strong>
+              <span id="reviewSource">Google Review</span>
+            </div>
+
+            <div class="review-controls">
+              <button id="prevReview">←</button>
+              <button id="nextReview">→</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit">
+      <div class="container">
+
+        <div class="visit-grid reveal">
+
+          <div class="visit-content">
+
+            <div class="section-label">Come say hello</div>
+
+            <h2 class="section-title">
+              Your table<br>is waiting.
+            </h2>
+
+            <p style="color:rgba(255,255,255,.65);">
+              Bring your friends, your date, your laptop or simply
+              yourself. We'll take care of the rest.
+            </p>
+
+            <ul class="contact-list">
+
+              <li>
+                <span>⌖</span>
+                <div>
+                  <strong>Find us</strong>
+                  Walking Street, Main Road Ratan Talkies Chowk,
+                  opposite Capitol Hill Hotel, Ranchi, Jharkhand 834001
+                </div>
+              </li>
+
+              <li>
+                <span>◷</span>
+                <div>
+                  <strong>Opening hours</strong>
+                  Open daily · Closes around 11:00 PM
+                </div>
+              </li>
+
+              <li>
+                <span>₹</span>
+                <div>
+                  <strong>Average spend</strong>
+                  ₹200–400 per person
+                </div>
+              </li>
+
+            </ul>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;">
+
+              <button class="btn btn-primary reserve-trigger">
+                Reserve a Table
+              </button>
+
+              <a
+                class="btn btn-outline"
+                href="https://www.google.com/maps/search/?api=1&query=Cafe+Good+Samaritans+Ranchi"
+                target="_blank"
+                rel="noopener"
+              >
+                Get Directions
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="map-box">
+
+            <div class="map-card">
+              <strong>Cafe Good Samaritans</strong>
+              <p>
+                Ratan Talkies Chowk,<br>
+                Ranchi, Jharkhand 834001
+              </p>
+
+              <div class="stars" style="margin:8px 0;">
+                ★★★★★
+              </div>
+
+              <strong style="font-family:DM Sans;font-size:14px;">
+                4.7 · 1,072 reviews
+              </strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a href="#home" class="logo">
+            <span class="logo-mark">☕</span>
+            <span>Good Samaritans</span>
+          </a>
+
+          <p class="footer-description">
+            A cozy café in Ranchi serving delicious food, coffee,
+            conversations and good vibes.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li>Ratan Talkies Chowk</li>
+            <li>Ranchi, Jharkhand</li>
+            <li>Open daily</li>
+            <li>Until 11:00 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 Cafe Good Samaritans. All rights reserved.</span>
+        <span>Made with coffee & good vibes.</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div class="modal" id="reservationModal">
+
+    <div class="modal-card">
+
+      <button class="modal-close" id="modalClose">×</button>
+
+      <h2>Reserve your table</h2>
+
+      <p>
+        Tell us when you'd like to visit Cafe Good Samaritans.
+      </p>
+
+      <form id="reservationForm">
+
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" required placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" required placeholder="+91">
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="reservationDate" required>
+          </div>
+
+          <div class="form-group">
+            <label>Time</label>
+            <select required>
+              <option value="">Select</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+              <option>7:00 PM</option>
+              <option>8:00 PM</option>
+              <option>9:00 PM</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>Number of guests</label>
+          <select required>
+            <option value="">Select</option>
+            <option>1 person</option>
+            <option>2 people</option>
+            <option>3 people</option>
+            <option>4 people</option>
+            <option>5 people</option>
+            <option>6+ people</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary form-submit" type="submit">
+          Request Reservation
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script>
+    /* ---------------- HEADER ---------------- */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+
+    /* ---------------- MOBILE NAV ---------------- */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuToggle.textContent =
+        navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+
+    /* ---------------- MENU FILTER ---------------- */
+
+    const tabs = document.querySelectorAll(".tab");
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    tabs.forEach(tab => {
+
+      tab.addEventListener("click", () => {
+
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const category = tab.dataset.category;
+
+        menuItems.forEach(item => {
+
+          if (
+            category === "all" ||
+            item.dataset.category === category
+          ) {
+            item.style.display = "flex";
+          } else {
+            item.style.display = "none";
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* ---------------- REVIEWS ---------------- */
+
+    const reviews = [
+      {
+        quote:
+          "Love the cozy vibe and the food here is delicious and at a very decent cost.",
+        name: "Happy Guest"
+      },
+      {
+        quote:
+          "Great food, quick service, and a cozy atmosphere. Would definitely visit again!",
+        name: "Google Guest"
+      },
+      {
+        quote:
+          "The menu is refreshingly affordable without compromising on quality. The swings and warm lighting are amazing.",
+        name: "Cafe Visitor"
+      },
+      {
+        quote:
+          "The food was delicious, the staff was incredibly welcoming, and the atmosphere was perfect for a relaxing meal.",
+        name: "Regular Guest"
+      }
+    ];
+
+    let reviewIndex = 0;
+
+    const reviewQuote = document.getElementById("reviewQuote");
+    const reviewName = document.getElementById("reviewName");
+
+    function updateReview() {
+      const review = reviews[reviewIndex];
+
+      reviewQuote.style.opacity = "0";
+      reviewName.style.opacity = "0";
+
+      setTimeout(() => {
+        reviewQuote.textContent = "“" + review.quote + "”";
+        reviewName.textContent = review.name;
+
+        reviewQuote.style.opacity = "1";
+        reviewName.style.opacity = "1";
+      }, 150);
+    }
+
+    document.getElementById("nextReview").addEventListener("click", () => {
+      reviewIndex = (reviewIndex + 1) % reviews.length;
+      updateReview();
+    });
+
+    document.getElementById("prevReview").addEventListener("click", () => {
+      reviewIndex =
+        (reviewIndex - 1 + reviews.length) % reviews.length;
+      updateReview();
+    });
+
+
+    /* ---------------- RESERVATION MODAL ---------------- */
+
+    const modal = document.getElementById("reservationModal");
+    const closeModal = document.getElementById("modalClose");
+
+    document.querySelectorAll(".reserve-trigger").forEach(button => {
+
+      button.addEventListener("click", event => {
+        event.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+    });
+
+    function hideModal() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    closeModal.addEventListener("click", hideModal);
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) {
+        hideModal();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        hideModal();
+      }
+    });
+
+
+    /* ---------------- RESERVATION FORM ---------------- */
+
+    const reservationDate = document.getElementById("reservationDate");
+
+    const today = new Date().toISOString().split("T")[0];
+    reservationDate.min = today;
+
+    document
+      .getElementById("reservationForm")
+      .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        alert(
+          "Thank you! Your reservation request has been received. Cafe Good Samaritans will confirm your table shortly."
+        );
+
+        event.target.reset();
+        hideModal();
+
+      });
+
+
+    /* ---------------- SCROLL REVEAL ---------------- */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* ---------------- HERO ANIMATION ---------------- */
+
+    window.addEventListener("load", () => {
+
+      document
+        .querySelectorAll(".hero .reveal")
+        .forEach(element => {
+          element.classList.add("visible");
+        });
+
+    });
+  </script>
+
+</body>
+</html>
